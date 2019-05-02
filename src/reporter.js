@@ -1,6 +1,6 @@
 const bytes = require('bytes')
 const { error, warn, info } = require('prettycli')
-const { event, repo, branch, commit_message, sha } = require('ci-env')
+const { event, repo, branch, commit_message, sha } = require('ci-env') //eslint-disable-line
 const build = require('./build')
 const api = require('./api')
 const debug = require('./debug')
@@ -28,12 +28,7 @@ const setBuildStatus = ({
 }
 
 // Generate global message as per https://github.com/siddharthkp/bundlesize/issues/182#issuecomment-343274689
-const getGlobalMessage = ({
-  results,
-  totalSize,
-  totalSizeMaster,
-  totalMaxSize
-}) => {
+const getGlobalMessage = ({ results, totalSize, totalSizeMaster, totalMaxSize }) => {
   let globalMessage
 
   let failures = results.filter(result => !!result.fail).length
@@ -51,9 +46,7 @@ const getGlobalMessage = ({
     // multiple files, multiple failures
     const change = totalSize - totalSizeMaster
     const prettyChange =
-      change === 0
-        ? 'no change'
-        : change > 0 ? `+${bytes(change)}` : `-${bytes(Math.abs(change))}`
+      change === 0 ? 'no change' : change > 0 ? `+${bytes(change)}` : `-${bytes(Math.abs(change))}`
 
     globalMessage = `${failures} out of ${results.length} bundles are too big! (${prettyChange})`
   } else {
@@ -62,9 +55,7 @@ const getGlobalMessage = ({
     const prettyMaxSize = bytes(totalMaxSize)
     const change = totalSize - totalSizeMaster
     const prettyChange =
-      change === 0
-        ? 'no change'
-        : change > 0 ? `+${bytes(change)}` : `-${bytes(Math.abs(change))}`
+      change === 0 ? 'no change' : change > 0 ? `+${bytes(change)}` : `-${bytes(Math.abs(change))}`
 
     globalMessage = `Total bundle size is ${prettySize}/${prettyMaxSize} (${prettyChange})`
   }
@@ -129,9 +120,7 @@ const analyse = ({ files, masterValues }) => {
 
 const report = ({ files, globalMessage, fail }) => {
   /* prepare the build page */
-  const params = encodeURIComponent(
-    JSON.stringify({ files, repo, branch, commit_message, sha })
-  )
+  const params = encodeURIComponent(JSON.stringify({ files, repo, branch, commit_message, sha }))
   let url = `https://bundlesize-store.now.sh/build?info=${params}`
 
   debug('url before shortening', url)
