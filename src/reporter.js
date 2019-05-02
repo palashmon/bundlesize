@@ -12,7 +12,7 @@ const setBuildStatus = ({
   globalMessage,
   fail,
   event: currentEvent,
-  branch: currentBranch
+  branch: currentBranch,
 }) => {
   if (fail) build.fail(globalMessage || 'bundle size > maxSize', url)
   else {
@@ -113,7 +113,7 @@ const analyse = ({ files, masterValues }) => {
       fail,
       size,
       master,
-      maxSize
+      maxSize,
     }
   })
 }
@@ -145,7 +145,7 @@ const compare = (files, masterValues = {}) => {
     results,
     totalSize: results.reduce((acc, result) => acc + result.size, 0),
     totalSizeMaster: results.reduce((acc, result) => acc + result.master, 0),
-    totalMaxSize: results.reduce((acc, result) => acc + result.maxSize, 0)
+    totalMaxSize: results.reduce((acc, result) => acc + result.maxSize, 0),
   })
 
   let fail = results.filter(result => result.fail).length > 0
