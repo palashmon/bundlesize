@@ -1,10 +1,10 @@
 {
-  "name": "bundlesize",
-  "version": "0.17.1",
+  "name": "@palashmon/bundlesize",
+  "version": "0.18.0",
   "description": "Keep your library size in check",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/siddharthkp/bundlesize.git"
+    "url": "git+https://github.com/palashmon/bundlesize.git"
   },
   "main": "index.js",
   "bin": {

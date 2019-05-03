@@ -7,11 +7,10 @@
 
 &nbsp;
 
-[![Build Status](https://travis-ci.org/siddharthkp/bundlesize.svg?branch=master)](https://travis-ci.org/siddharthkp/bundlesize)
+[![Build Status](https://api.travis-ci.org/palashmon/bundlesize.svg?branch=stable)](https://travis-ci.org/palashmon/bundlesize)
 [![NPM Version](https://img.shields.io/npm/v/bundlesize.svg)](https://npmjs.org/package/bundlesize)
 [![NPM Downloads](https://img.shields.io/npm/dm/bundlesize.svg?style=flat)](https://www.npmjs.com/package/bundlesize)
 &nbsp;
-
 
 #### minimal setup
 
@@ -44,6 +43,7 @@ npx bundlesize
 &nbsp;
 
 #### 1) Add the path and maxSize in your `package.json`.
+
 By default the gzipped size is tested. You can use the `compression` option to change this. (`gzip`, `brotli`, or `none`).
 
 ```json
@@ -91,13 +91,13 @@ Currently works for [Travis CI](https://travis-ci.org), [CircleCI](https://circl
 - Add this token as `BUNDLESIZE_GITHUB_TOKEN` as environment parameter in your CIs project settings.
 
 Using a different CI? You will need to supply an additional 4 environment variables.
-- `CI_REPO_OWNER` given the repo  `https://github.com/myusername/myrepo` would be `myusername`
+
+- `CI_REPO_OWNER` given the repo `https://github.com/myusername/myrepo` would be `myusername`
 - `CI_REPO_NAME` given the repo `https://github.com/myusername/myrepo` would be `myrepo`
 - `CI_COMMIT_MESSAGE` the commit message
 - `CI_COMMIT_SHA` the SHA of the CI commit, in [Jenkins](https://jenkins.io/) you would use `${env.GIT_COMMIT}`
 
 (Ask me for help if you're stuck)
-
 
 &nbsp;
 
@@ -156,7 +156,7 @@ For more granular configuration, we recommend configuring it in the `package.jso
 
 #### TODO
 
-- Work with other CI tools 
+- Work with other CI tools
   - [AppVeyor](https://www.appveyor.com/) ([#234](https://github.com/siddharthkp/bundlesize/issues/234))
 - Automate setup (setting env_var)
 
