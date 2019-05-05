@@ -122,8 +122,13 @@ const analyse = ({ files, masterValues }) => {
 const report = ({ files, globalMessage, fail }) => {
   /* prepare the build page */
   const params = encodeURIComponent(JSON.stringify({ files, repo, branch, commit_message, sha }))
+
+  // eslint-disable-next-line
   const compressedData = encodeURIComponent(zlib.gzipSync(params).toString('base64'))
-  let url = `https://bundlesize-store.now.sh/build?data=${compressedData}`
+
+  // Using non-compressed data until bundlesize-store.now.sh code is updated
+  let url = `https://bundlesize-store.now.sh/build?info=${params}`
+  // let url = `https://bundlesize-store.now.sh/build?data=${compressedData}`
 
   debug('url before shortening', url)
 
