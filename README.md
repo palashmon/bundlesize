@@ -7,9 +7,9 @@
 
 &nbsp;
 
-[![Build Status](https://travis-ci.org/siddharthkp/bundlesize.svg?branch=master)](https://travis-ci.org/siddharthkp/bundlesize)
-[![NPM Version](https://img.shields.io/npm/v/bundlesize.svg)](https://npmjs.org/package/bundlesize)
-[![NPM Downloads](https://img.shields.io/npm/dm/bundlesize.svg?style=flat)](https://www.npmjs.com/package/bundlesize)
+![Build Status](https://github.com/palashmon/bundlesize/actions/workflows/main.yml/badge.svg?branch=master)
+[![NPM Version](https://img.shields.io/npm/v/@palashmon/bundlesize.svg)](https://npmjs.org/package/@palashmon/bundlesize)
+[![NPM Downloads](https://img.shields.io/npm/dm/bundlesize.svg?style=flat)](https://www.npmjs.com/package/@palashmon/bundlesize)
 &nbsp;
 
 #### Setup
@@ -191,7 +191,7 @@ You will need to supply an additional 5 environment variables.
 - `CI_REPO_NAME` given the repo `https://github.com/myusername/myrepo` would be `myrepo`
 - `CI_COMMIT_MESSAGE` the commit message
 - `CI_COMMIT_SHA` the SHA of the CI commit, in [Jenkins](https://jenkins.io/) you would use `${env.GIT_COMMIT}`
-- `CI=true` usually set automatically in CI environments 
+- `CI=true` usually set automatically in CI environments
 
 (Ask me for help if you're stuck)
 
